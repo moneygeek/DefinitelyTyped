@@ -1143,6 +1143,130 @@ id(value: number|string): this;
 
     }
 
+    interface RangeEllipse extends Nvd3Element {
+        clearHighlights(): this;
+        /*If true, masks lines within the X and Y scales using a clip-path*/
+        clipEdge(): boolean;
+        /*If true, masks lines within the X and Y scales using a clip-path*/
+        clipEdge(value: boolean): this;
+        /*When useVoronoi and clipVoronoi are true, you can control the clip radius with this option. Essentially this lets you set how far away from the actual point you can put the mouse for it to select the point.*/
+        clipRadius(func: (d: any) => number): this;
+        /*When useVoronoi and clipVoronoi are true, you can control the clip radius with this option. Essentially this lets you set how far away from the actual point you can put the mouse for it to select the point.*/
+        clipRadius(value: number): this;
+        /*When useVoronoi is on, this masks each voronoi section with a circle to limit selection to smaller area.*/
+        clipVoronoi(): boolean;
+        /*When useVoronoi is on, this masks each voronoi section with a circle to limit selection to smaller area.*/
+        clipVoronoi(value: boolean): this;
+        /*Colors to use for the different data. If an array is given, it is converted to a function automatically.*/
+        color(value: string[]): this;
+        /*Colors to use for the different data. If an array is given, it is converted to a function automatically.*/
+        color(func: (d: any, i: number) => string): this;
+        /*Duration in ms to take when updating chart. For things like bar charts, each bar can animate by itself but the total time taken should be this value.*/
+        duration(): number;
+        /*Duration in ms to take when updating chart. For things like bar charts, each bar can animate by itself but the total time taken should be this value.*/
+        duration(value: number): this;
+        /*List of numbers to Force into the point scale (ie. 0, or a max / min, etc.). This ensures the numbers are in the X domain but doesn't override the whole domain. This option only applies if you have not overridden the whole domain with the xDomain option*/
+        forcePoint(): number[];
+        /*List of numbers to Force into the point scale (ie. 0, or a max / min, etc.). This ensures the numbers are in the X domain but doesn't override the whole domain. This option only applies if you have not overridden the whole domain with the xDomain option*/
+        forcePoint(value: number[]): this;
+        /*List of numbers to Force into the X scale (ie. 0, or a max / min, etc.). This ensures the numbers are in the X domain but doesn't override the whole domain. This option only applies if you have not overridden the whole domain with the xDomain option*/
+        forceX(): number[];
+        /*List of numbers to Force into the X scale (ie. 0, or a max / min, etc.). This ensures the numbers are in the X domain but doesn't override the whole domain. This option only applies if you have not overridden the whole domain with the xDomain option*/
+        forceX(value: number[]): this;
+        /*List of numbers to Force into the Y scale (ie. 0, or a max / min, etc.). This ensures the numbers are in the X domain but doesn't override the whole domain. This option only applies if you have not overridden the whole domain with the xDomain option*/
+        forceY(): number[];
+        /*List of numbers to Force into the Y scale (ie. 0, or a max / min, etc.). This ensures the numbers are in the X domain but doesn't override the whole domain. This option only applies if you have not overridden the whole domain with the xDomain option*/
+        forceY(value: number[]): this;
+        /*The height the graph or component created inside the SVG should be made*/
+        height(): number;
+        /*The height the graph or component created inside the SVG should be made.*/
+        height(value: number): this;
+        id(): any;
+        id(value: number | string): this;
+        /*A master flag for turning chart interaction on and off. This overrides all tooltip, voronoi, and guideline options.*/
+        interactive(): boolean;
+        /*A master flag for turning chart interaction on and off. This overrides all tooltip, voronoi, and guideline options.*/
+        interactive(value: boolean): this;
+        /*Object containing the margins for the chart or component. You can specify only certain margins in the object to change just those parts.*/
+        margin(): Margin;
+        /*Object containing the margins for the chart or component. You can specify only certain margins in the object to change just those parts.*/
+        margin(value: Margin): this;
+        /**/
+        padData(): boolean;
+        /**/
+        padData(value: boolean): this;
+        /**/
+        padDataOuter(): number;
+        /**/
+        padDataOuter(value: number): this;
+        /* Function used to determine if scatter points are active or not, returns false to denote them as inactive and true for active.*/
+        pointActive(): (d: any) => boolean;
+        /*Function used to determine if scatter points are active or not, returns false to denote them as inactive and true for active.*/
+        pointActive(func: (d: any) => boolean): this;
+        /* Defines the whole point scale's domain. Using this will disable calculating the domain based on the data.*/
+        pointxDomain(): number[];
+        /* Defines the whole point scale's domain. Using this will disable calculating the domain based on the data.*/
+        pointDomain(value: number[]): this;
+        /* Override the point scale's range. Using this will disable calculating the range based on the data and chart width/height.*/
+        pointRange(): number[];
+        /* Override the point scale's range. Using this will disable calculating the range based on the data and chart width/height.*/
+        pointRange(value: number[]): this;
+        /* Override the default scale type for the point axis*/
+        pointScale(): any;
+        /* Override the default scale type for the point axis*/
+        pointScale(value: any): this;
+        /* Specifies the size of the points in a scatter. Scatter is also used to make the hover points on lines.*/
+        pointSize(): (d: any) => number;
+        /* Specifies the size of the points in a scatter. Scatter is also used to make the hover points on lines.*/
+        pointSize(func: (d: any) => number): this;
+        /* Specifies the size of the points in a scatter. Scatter is also used to make the hover points on lines.*/
+        pointSize(value: number): this;
+        /*Displays the voronoi areas on the chart. This is mostly helpful when debugging issues.*/
+        showVoronoi(): boolean;
+        /*Displays the voronoi areas on the chart. This is mostly helpful when debugging issues.*/
+        showVoronoi(value: boolean): this;
+        /*Use voronoi diagram to select nearest point to display tooltip instead of requiring a hover over the specific point itself. Setting this to false will also set clipVoronoi to false.*/
+        useVoronoi(): boolean;
+        /*Use voronoi diagram to select nearest point to display tooltip instead of requiring a hover over the specific point itself. Setting this to false will also set clipVoronoi to false.*/
+        useVoronoi(value: boolean): this;
+        /* The width the graph or component created inside the SVG should be made*/
+        width(): number;
+        /*The width the graph or component created inside the SVG should be made.*/
+        width(value: number): this;
+        /* Proxy function to return the X value so adjustments can be made if needed. For pie/donut chart this returns the key for the slice.*/
+        x(): (d: any) => any;
+        /* Proxy function to return the X value so adjustments can be made if needed. For pie/donut chart this returns the key for the slice.*/
+        x(func: (d: any) => any): this;
+        /* Defines the whole X scale's domain. Using this will disable calculating the domain based on the data.*/
+        xDomain(): number[];
+        /* Defines the whole X scale's domain. Using this will disable calculating the domain based on the data.*/
+        xDomain(value: number[]): this;
+        /* Override the X scale's range. Using this will disable calculating the range based on the data and chart width/height.*/
+        xRange(): number[];
+        /* Override the X scale's range. Using this will disable calculating the range based on the data and chart width/height.*/
+        xRange(value: number[]): this;
+        /* Override the default scale type for the X axis*/
+        xScale(): any;
+        /* Override the default scale type for the X axis*/
+        xScale(value: any): this;
+        y(): (d: any) => number;
+        /* Proxy function to return the y value so adjustments can be made if needed. For pie/donut chart this returns the key for the slice.*/
+        y(func: (d: any) => number): this;
+        /* Defines the whole y scale's domain. Using this will disable calculating the domain based on the data.*/
+        yDomain(): number[];
+        /* Defines the whole y scale's domain. Using this will disable calculating the domain based on the data.*/
+        yDomain(value: number[]): this;
+        /* Override the y scale's range. Using this will disable calculating the range based on the data and chart width/height.*/
+        yRange(): number[];
+        /* Override the y scale's range. Using this will disable calculating the range based on the data and chart width/height.*/
+        yRange(value: number[]): this;
+        /* Override the default scale type for the y axis*/
+        yScale(): any;
+        /* Override the default scale type for the y axis*/
+        yScale(value: any): this;
+
+    }
+
     interface SparkLine extends Nvd3Element {
         animate(): boolean;
         animate(value: boolean): this;
@@ -3280,6 +3404,188 @@ id(value: number|string): this;
 
     }
 
+    interface RangeChart extends Chart {
+        re: RangeEllipse;
+        xAxis: Nvd3Axis;
+        yAxis: Nvd3Axis;
+        legend: Legend;
+        tooltip: Tooltip;
+        distX: Distribution;
+        distY: Distribution;
+
+        clearHighlights(): this;
+        /*If true, masks lines within the X and Y scales using a clip-path*/
+        clipEdge(): boolean;
+        /*If true, masks lines within the X and Y scales using a clip-path*/
+        clipEdge(value: boolean): this;
+        /*When useVoronoi and clipVoronoi are true, you can control the clip radius with this option. Essentially this lets you set how far away from the actual point you can put the mouse for it to select the point.*/
+        clipRadius(func: (d: any) => number): this;
+        /*When useVoronoi and clipVoronoi are true, you can control the clip radius with this option. Essentially this lets you set how far away from the actual point you can put the mouse for it to select the point.*/
+        clipRadius(value: number): this;
+        /*When useVoronoi is on, this masks each voronoi section with a circle to limit selection to smaller area.*/
+        clipVoronoi(): boolean;
+        /*When useVoronoi is on, this masks each voronoi section with a circle to limit selection to smaller area.*/
+        clipVoronoi(value: boolean): this;
+        /*Colors to use for the different data. If an array is given, it is converted to a function automatically.*/
+        color(value: string[]): this;
+        /*Colors to use for the different data. If an array is given, it is converted to a function automatically.*/
+        color(func: (d: any, i: number) => string): this;
+        /*No longer used.Use chart.dispatch.changeState(...) instead*/
+        defaultState(): any;
+        /*No longer used.Use chart.dispatch.changeState(...) instead*/
+        defaultState(value: any): this;
+        /*Duration in ms to take when updating chart. For things like bar charts, each bar can animate by itself but the total time taken should be this value.*/
+        duration(): number;
+        /*Duration in ms to take when updating chart. For things like bar charts, each bar can animate by itself but the total time taken should be this value.*/
+        duration(value: number): this;
+        /*List of numbers to Force into the point scale (ie. 0, or a max / min, etc.). This ensures the numbers are in the X domain but doesn't override the whole domain. This option only applies if you have not overridden the whole domain with the xDomain option*/
+        forcePoint(): number[];
+        /*List of numbers to Force into the point scale (ie. 0, or a max / min, etc.). This ensures the numbers are in the X domain but doesn't override the whole domain. This option only applies if you have not overridden the whole domain with the xDomain option*/
+        forcePoint(value: number[]): this;
+        /*List of numbers to Force into the X scale (ie. 0, or a max / min, etc.). This ensures the numbers are in the X domain but doesn't override the whole domain. This option only applies if you have not overridden the whole domain with the xDomain option*/
+        forceX(): number[];
+        /*List of numbers to Force into the X scale (ie. 0, or a max / min, etc.). This ensures the numbers are in the X domain but doesn't override the whole domain. This option only applies if you have not overridden the whole domain with the xDomain option*/
+        forceX(value: number[]): this;
+        /*List of numbers to Force into the Y scale (ie. 0, or a max / min, etc.). This ensures the numbers are in the X domain but doesn't override the whole domain. This option only applies if you have not overridden the whole domain with the xDomain option*/
+        forceY(): number[];
+        /*List of numbers to Force into the Y scale (ie. 0, or a max / min, etc.). This ensures the numbers are in the X domain but doesn't override the whole domain. This option only applies if you have not overridden the whole domain with the xDomain option*/
+        forceY(value: number[]): this;
+        /*The height the graph or component created inside the SVG should be made*/
+        height(): number;
+        /*The height the graph or component created inside the SVG should be made.*/
+        height(value: number): this;
+        /**/
+        highlightPoint(): (d: any) => boolean;
+        /**/
+        highlightPoint(func: (d: any) => boolean): this;
+        id(): any;
+id(value: number|string): this;
+        /*A master flag for turning chart interaction on and off. This overrides all tooltip, voronoi, and guideline options.*/
+        interactive(): boolean;
+        /*A master flag for turning chart interaction on and off. This overrides all tooltip, voronoi, and guideline options.*/
+        interactive(value: boolean): this;
+        /*Object containing the margins for the chart or component. You can specify only certain margins in the object to change just those parts.*/
+        margin(): Margin;
+        /*Object containing the margins for the chart or component. You can specify only certain margins in the object to change just those parts.*/
+        margin(value: Margin): this;
+        noData(): string;
+        noData(value: string): this;
+        /**/
+        padData(): boolean;
+        /**/
+        padData(value: boolean): this;
+        /**/
+        padDataOuter(): number;
+        /**/
+        padDataOuter(value: number): this;
+        /* Function used to determine if scatter points are active or not, returns false to denote them as inactive and true for active.*/
+        pointActive(): (d: any) => boolean;
+        /*Function used to determine if scatter points are active or not, returns false to denote them as inactive and true for active.*/
+        pointActive(func: (d: any) => boolean): this;
+        /* Defines the whole point scale's domain. Using this will disable calculating the domain based on the data.*/
+        pointxDomain(): number[];
+        /* Defines the whole point scale's domain. Using this will disable calculating the domain based on the data.*/
+        pointDomain(value: number[]): this;
+        /* Override the point scale's range. Using this will disable calculating the range based on the data and chart width/height.*/
+        pointRange(): number[];
+        /* Override the point scale's range. Using this will disable calculating the range based on the data and chart width/height.*/
+        pointRange(value: number[]): this;
+        /* Override the default scale type for the point axis*/
+        pointScale(): any;
+        /* Override the default scale type for the point axis*/
+        pointScale(value: any): this;
+        /* Specifies the size of the points in a scatter. Scatter is also used to make the hover points on lines.*/
+        pointSize(): (d: any) => number;
+        /* Specifies the size of the points in a scatter. Scatter is also used to make the hover points on lines.*/
+        pointSize(func: (d: any) => number): this;
+        /* Specifies the size of the points in a scatter. Scatter is also used to make the hover points on lines.*/
+        pointSize(value: number): this;
+        /*When only one Y axis is used, this puts the Y axis on the right side instead of the left.*/
+        rightAlignYAxis(): boolean;
+        /*When only one Y axis is used, this puts the Y axis on the right side instead of the left.*/
+        rightAlignYAxis(value: boolean): this;
+        /**/
+        showDistX(): boolean;
+        /**/
+        showDistX(value: boolean): this;
+        /**/
+        showDistY(): boolean;
+        /**/
+        showDistY(value: boolean): this;
+        /*Whether to display the legend or not.*/
+        showLegend(): boolean;
+        /*Whether to display the legend or not.*/
+        showLegend(value: boolean): this;
+        /*Displays the voronoi areas on the chart. This is mostly helpful when debugging issues.*/
+        showVoronoi(): boolean;
+        /*Displays the voronoi areas on the chart. This is mostly helpful when debugging issues.*/
+        showVoronoi(value: boolean): this;
+        /*Display or hide the X axis*/
+        showXAxis(): boolean;
+        /*Display or hide the X axis*/
+        showXAxis(value: boolean): this;
+        /*Display or hide the Y axis*/
+        showYAxis(): boolean;
+        /*Display or hide the Y axis*/
+        showYAxis(value: boolean): this;
+        /*Deprecated. Use chart.tooltip.contentGenerator or chart.interactiveGuideline.tooltip.contentGenerator to control tooltip content.*/
+        tooltipContent(): (d: any) => string;
+        /*Deprecated. Use chart.tooltip.contentGenerator or chart.interactiveGuideline.tooltip.contentGenerator to control tooltip content.*/
+        tooltipContent(func: (d: any) => string): this;
+        /**/
+        tooltipXContent(): (d: any) => string;
+        /**/
+        tooltipXContent(func: (d: any) => string): this;
+        /**/
+        tooltipYContent(): (d: any) => string;
+        /**/
+        tooltipYContent(func: (d: any) => string): this;
+        /*Deprecated. Use chart.tooltip.enabled or chart.interactive to control if tooltips are enabled or not.*/
+        tooltips(): boolean;
+        /*Deprecated. Use chart.tooltip.enabled or chart.interactive to control if tooltips are enabled or not.*/
+        tooltips(value: boolean): this;
+        /*Use voronoi diagram to select nearest point to display tooltip instead of requiring a hover over the specific point itself. Setting this to false will also set clipVoronoi to false.*/
+        useVoronoi(): boolean;
+        /*Use voronoi diagram to select nearest point to display tooltip instead of requiring a hover over the specific point itself. Setting this to false will also set clipVoronoi to false.*/
+        useVoronoi(value: boolean): this;
+        /* The width the graph or component created inside the SVG should be made*/
+        width(): number;
+        /*The width the graph or component created inside the SVG should be made.*/
+        width(value: number): this;
+        /* Proxy function to return the X value so adjustments can be made if needed. For pie/donut chart this returns the key for the slice.*/
+        x(): (d: any) => any;
+        /* Proxy function to return the X value so adjustments can be made if needed. For pie/donut chart this returns the key for the slice.*/
+        x(func: (d: any) => any): this;
+        /* Defines the whole X scale's domain. Using this will disable calculating the domain based on the data.*/
+        xDomain(): number[];
+        /* Defines the whole X scale's domain. Using this will disable calculating the domain based on the data.*/
+        xDomain(value: number[]): this;
+        /* Override the X scale's range. Using this will disable calculating the range based on the data and chart width/height.*/
+        xRange(): number[];
+        /* Override the X scale's range. Using this will disable calculating the range based on the data and chart width/height.*/
+        xRange(value: number[]): this;
+        /* Override the default scale type for the X axis*/
+        xScale(): any;
+        /* Override the default scale type for the X axis*/
+        xScale(value: any): this;
+        y(): (d: any) => number;
+        /* Proxy function to return the y value so adjustments can be made if needed. For pie/donut chart this returns the key for the slice.*/
+        y(func: (d: any) => number): this;
+        /* Defines the whole y scale's domain. Using this will disable calculating the domain based on the data.*/
+        yDomain(): number[];
+        /* Defines the whole y scale's domain. Using this will disable calculating the domain based on the data.*/
+        yDomain(value: number[]): this;
+        /* Override the y scale's range. Using this will disable calculating the range based on the data and chart width/height.*/
+        yRange(): number[];
+        /* Override the y scale's range. Using this will disable calculating the range based on the data and chart width/height.*/
+        yRange(value: number[]): this;
+        /* Override the default scale type for the y axis*/
+        yScale(): any;
+        /* Override the default scale type for the y axis*/
+        yScale(value: any): this;
+
+    }
+
     interface SankeyChart extends Chart {
         /*Y-position of the middle of a node.*/
         center(): number;
@@ -3439,6 +3745,8 @@ id(value: number|string): this;
         sankeyChart(): SankeyChart;
         scatter(): Scatter;
         scatterChart(): ScatterChart;
+        rangeEllipse(): RangeEllipse;
+        rangeChart(): RangeChart;
         sparkline(): SparkLine;
         sparklinePlus(): SparkLinePlus;
         stackedArea(): StackedArea;
