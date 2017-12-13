@@ -464,6 +464,9 @@ id(value: number|string): this;
         yScale(): any;
         /* Override the default scale type for the y axis*/
         yScale(value: any): this;
+        groupSpacing(): number;
+        /*The padding between bar groups, this is passed as the padding attribute of rangeBands*/
+        groupSpacing(value: number): this;
     }
 
     interface Distribution extends Nvd3Element {
