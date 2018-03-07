@@ -3717,6 +3717,16 @@ id(value: number|string): this;
         noData(value: string): this;
     }
 
+    interface Radar extends Nvd3Element {
+        
+    }
+
+    interface RadarChart extends Chart {
+        radar: Radar;
+        tooltip: Tooltip;
+        legend: Legend;
+    }
+
 //#endregion
 
     interface Models{
