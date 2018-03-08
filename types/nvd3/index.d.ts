@@ -3725,6 +3725,18 @@ id(value: number|string): this;
         radar: Radar;
         tooltip: Tooltip;
         legend: Legend;
+
+        valueFormat(): string;
+        valueFormat(value: string): this;
+        min(value: number): this;
+        max(value: number): this;
+        stepSize(value: number): this;
+        margin(value: Margin): this;
+
+        color(value: string[]): this;
+        /*Colors to use for the different data. If an array is given, it is converted to a function automatically.*/
+        color(func: (d: any, i: number) => string): this;
+
     }
 
 //#endregion
@@ -3766,6 +3778,8 @@ id(value: number|string): this;
         stackedAreaChart(): StackedAreaChart;
         sunburst(): Sunburst;
         sunburstChart(): SunburstChart;
+        radar(): Radar;
+        radarChart(): RadarChart;
 		tooltip(): Tooltip;
 	}
 
